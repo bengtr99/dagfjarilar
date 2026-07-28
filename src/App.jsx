@@ -446,6 +446,8 @@ export default function TrollslandeApp() {
       const yearEnd = `${year}-12-31`;
       const filters = [
         "datasetName='Artportalen'",
+        // Skip observations flagged as uncertain identification ("osäker artbestämning").
+        "isUncertainIdentification = false",
         `vernacularName='${escapeCql(speciesName)}'`,
         `endDate >= '${yearStart}'`,
         `endDate <= '${yearEnd}'`
